@@ -5,11 +5,10 @@ public class PlayerMove : MonoBehaviour
 {
     // https://www.youtube.com/watch?v=Tz-2Z0vLLt8
     [SerializeField] float _walkSpeed = 20f;
-    [SerializeField] int _runCoef = 2;
     [SerializeField] int _movementForce = 200;
     [SerializeField] Rigidbody _playerRB;
-    [SerializeField] float _runCoeffficient;
-    [SerializeField] bool _runB;
+    [SerializeField] float _runCoeffficient = 2f;
+    [SerializeField] bool _runB = false;
 
     // vector de déplacement
     private Vector2 _moveInput;
