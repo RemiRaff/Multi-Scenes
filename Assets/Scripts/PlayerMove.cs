@@ -5,7 +5,6 @@ public class PlayerMove : MonoBehaviour
 {
     // https://www.youtube.com/watch?v=Tz-2Z0vLLt8
     [SerializeField] float _walkSpeed = 20f;
-    [SerializeField] int _movementForce = 200;
     [SerializeField] Rigidbody _playerRB;
     [SerializeField] float _runCoeffficient = 2f;
     [SerializeField] bool _runB = false;
@@ -30,11 +29,13 @@ public class PlayerMove : MonoBehaviour
     void NewInput_Move()
     {
         // https://www.youtube.com/watch?v=XZ2dk7MVtVA
-        Vector3 v = new Vector3(_moveInput.x * _walkSpeed, 0, _moveInput.y * _walkSpeed);
+        // force, collision et velocity pas applicable si isKenetic coché
+        Vector3 v = new Vector3(_moveInput.x, 0, _moveInput.y) * _walkSpeed;
         if (_runB) // * 2 si run
-            v *= _runCoeffficient;
-        print(v.ToString());
-        _playerRB.AddForce(v * Time.deltaTime * _movementForce);
+            // _playerRB.AddForce(v * Time.deltaTime * _movementForce);
+            _playerRB.velocity = transform.TransformDirection(v) * _runCoeffficient;
+        // Time.deltaTime abérant pour la velocity
+        else _playerRB.velocity = v;
     }
 
     void OldInput_Move()
