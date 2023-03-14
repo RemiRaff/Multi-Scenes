@@ -44,6 +44,8 @@ public class StartingUIHandler : MonoBehaviour
             Data p = JsonUtility.FromJson<Data>(jsonStr);
 
             // charger la bonne scene
+             SceneManager.LoadScene(p._sceneID);
+
             // initialiser le player
         }
     }
