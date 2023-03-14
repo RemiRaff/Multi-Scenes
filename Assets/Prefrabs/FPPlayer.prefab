@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d592980f03f82134b82d09674a566838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _walkSpeed: 8
+  _walkSpeed: 5
   _runCoeffficient: 2
   _runB: 0
   _playerRB: {fileID: 4034417866546617811}

@@ -12,6 +12,7 @@ public class PlayerMenu : MonoBehaviour
     {
         isDisplayed = false;
         monMenu = Instantiate(menuScene);
+        monMenu.SetActive(false);
     }
 
     public void NavMenu(InputAction.CallbackContext ctx)
