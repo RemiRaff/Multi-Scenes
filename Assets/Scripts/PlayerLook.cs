@@ -4,9 +4,11 @@ public class PlayerLook : MonoBehaviour
 {
     // https://www.youtube.com/watch?v=Tz-2Z0vLLt8
     [SerializeField] float mouseSensitivity = 250f;
+
     [SerializeField] float maxViewDistance = -20f;
     [SerializeField] float minViewDistance = 80f;
-    [SerializeField] Transform playerBody;
+
+    [SerializeField] Transform cameraTransf;
 
     private float xRotation = 0f;
     private float mouseX;
@@ -22,16 +24,19 @@ public class PlayerLook : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        OldLook();
+        OldInput_Look();
+
+        // mouvement camera vertical
         xRotation -= mouseY;
         // Clamp give a value between min and max, replace a if statement
         xRotation = Mathf.Clamp(xRotation, maxViewDistance, minViewDistance);
+        cameraTransf.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
-        playerBody.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        // mouvement horizontal G/D
         transform.Rotate(Vector3.up * mouseX);
     }
 
-    void OldLook()
+    void OldInput_Look()
     {
         // The movement is managed with the old input system, axe Y horizon, axe X vertical
         mouseX = mouseSensitivity * Time.deltaTime * Input.GetAxis("Mouse X");

@@ -4941,10 +4941,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d592980f03f82134b82d09674a566838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _walkSpeed: 20
-  _playerRB: {fileID: 280041802}
+  _walkSpeed: 8
   _runCoeffficient: 2
   _runB: 0
+  _playerRB: {fileID: 280041802}
 --- !u!114 &280041799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4960,7 +4960,7 @@ MonoBehaviour:
   mouseSensitivity: 250
   maxViewDistance: -70
   minViewDistance: 35
-  playerBody: {fileID: 702608761}
+  cameraTransf: {fileID: 702608761}
 --- !u!4 &280041800
 Transform:
   m_ObjectHideFlags: 0

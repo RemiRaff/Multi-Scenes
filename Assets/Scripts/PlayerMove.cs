@@ -7,6 +7,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] float _walkSpeed = 8f;
     [SerializeField] float _runCoeffficient = 2f;
     [SerializeField] bool _runB = false;
+
     [SerializeField] Rigidbody _playerRB;
 
     // vector de déplacement
@@ -32,11 +33,14 @@ public class PlayerMove : MonoBehaviour
         // https://www.youtube.com/watch?v=XZ2dk7MVtVA
         // force, collision et velocity pas applicable si isKenetic coché
         Vector3 v = new Vector3(_moveInput.x, 0, _moveInput.y) * _walkSpeed;
+
+        // transform.TransformDirection => permet le déplacement en tenant compte du transform local
+        // Time.deltaTime abérant pour la velocity
+        _playerRB.velocity = transform.TransformDirection(v);
+
         if (_runB) // * 2 si run
             // _playerRB.AddForce(v * Time.deltaTime * _movementForce);
-            _playerRB.velocity = transform.TransformDirection(v) * _runCoeffficient;
-        // Time.deltaTime abérant pour la velocity
-        else _playerRB.velocity = v;
+            _playerRB.velocity *= _runCoeffficient;
     }
 
     void OldInput_Move()
