@@ -4,10 +4,10 @@ using UnityEngine.InputSystem;
 public class PlayerMove : MonoBehaviour
 {
     // https://www.youtube.com/watch?v=Tz-2Z0vLLt8
-    [SerializeField] float _walkSpeed = 20f;
-    [SerializeField] Rigidbody _playerRB;
+    [SerializeField] float _walkSpeed = 8f;
     [SerializeField] float _runCoeffficient = 2f;
     [SerializeField] bool _runB = false;
+    [SerializeField] Rigidbody _playerRB;
 
     // vector de déplacement
     private Vector2 _moveInput;
@@ -24,6 +24,7 @@ public class PlayerMove : MonoBehaviour
     {
         // pour appel à interval fixe conseiller pour la phisics et RB
         NewInput_Move();
+        // OldInput_Move();
     }
 
     void NewInput_Move()
