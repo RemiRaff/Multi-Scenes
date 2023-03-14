@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 #if UNITY_EDITOR
 using UnityEditor; // EditorApplication non reconnu si absent
@@ -19,7 +20,7 @@ public class StartingUIHandler : MonoBehaviour
         monMenu.SetActive(false);
     }
 
-    public void Exit()
+    public static void Exit()
     {
 #if UNITY_EDITOR
         EditorApplication.ExitPlaymode(); // quit unity editor player
@@ -33,5 +34,17 @@ public class StartingUIHandler : MonoBehaviour
     {
         _startMenu.SetActive(false);
         monMenu.SetActive(true);
+    }
+
+    public void Load()
+    {
+        if (File.Exists(Application.persistentDataPath + "/SManData.json"))
+        {
+            string jsonStr = File.ReadAllText(Application.persistentDataPath + "/SManData.json");
+            Data p = JsonUtility.FromJson<Data>(jsonStr);
+
+            // charger la bonne scene
+            // initialiser le player
+        }
     }
 }
