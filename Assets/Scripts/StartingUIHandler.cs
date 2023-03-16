@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.IO;
 
 #if UNITY_EDITOR
@@ -10,6 +9,7 @@ public class StartingUIHandler : MonoBehaviour
 {
     [SerializeField] GameObject _startMenu; // menu present dans la start scene
     [SerializeField] GameObject _scenesMenu; // prefab
+    [SerializeField] SceneLoader _sceneLoader; // prefab
 
     private GameObject monMenu;
 
@@ -44,7 +44,7 @@ public class StartingUIHandler : MonoBehaviour
             Data p = JsonUtility.FromJson<Data>(jsonStr);
 
             // charger la bonne scene
-             SceneManager.LoadScene(p._sceneID);
+            _sceneLoader.LoadNextScene(p._sceneID);
 
             // initialiser le player
         }

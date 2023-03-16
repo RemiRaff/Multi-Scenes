@@ -1,8 +1,10 @@
-using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneUIHandler : MonoBehaviour
 {
+    [SerializeField] SceneLoader _sceneLoader; // prefab
+
     private float transfPosX;
     private float transfPosY;
     private float transfPosZ;
@@ -13,17 +15,17 @@ public class SceneUIHandler : MonoBehaviour
 
     public void FFButton()
     {
-        SceneManager.LoadScene(1);
+        _sceneLoader.LoadNextScene(1);
     }
 
     public void A1Button()
     {
-        SceneManager.LoadScene(2);
+        _sceneLoader.LoadNextScene(2);
     }
 
     public void A2Button()
     {
-        SceneManager.LoadScene(3);
+        _sceneLoader.LoadNextScene(3);
     }
 
     public void SetPlayerTrans(float px, float rx, float py, float ry, float pz, float rz)
