@@ -19,6 +19,7 @@ public class PlayerLook : MonoBehaviour
     {
         // capture la souris ???
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame

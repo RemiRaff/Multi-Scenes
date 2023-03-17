@@ -11,6 +11,8 @@ public class StartingUIHandler : MonoBehaviour
     [SerializeField] GameObject _scenesMenu; // prefab
     [SerializeField] SceneLoader _sceneLoader; // prefab
 
+    [SerializeField] PlayerData _pData;
+
     private GameObject monMenu;
 
     private void Start()
@@ -42,6 +44,11 @@ public class StartingUIHandler : MonoBehaviour
         {
             string jsonStr = File.ReadAllText(Application.persistentDataPath + "/SManData.json");
             Data p = JsonUtility.FromJson<Data>(jsonStr);
+
+            _pData._sceneID = p._sceneID;
+            _pData._playerPos = new Vector3(p._transPosX, p._transPosY, p._transPosZ);
+            _pData._playerRot = new Quaternion(p._transRotX, p._transRotY, p._transRotZ, p._transRotW);
+            _pData._toUpdate = true;
 
             // charger la bonne scene
             _sceneLoader.LoadNextScene(p._sceneID);

@@ -10,14 +10,20 @@ public class PlayerMove : MonoBehaviour
 
     [SerializeField] Rigidbody _playerRB;
 
+    [SerializeField] PlayerData _playerData;
+
     // vector de déplacement
     private Vector2 _moveInput;
-
 
     void Start()
     {
         // playerRB = GetComponent<Rigidbody>();
         _runB = false;
+        if (_playerData._toUpdate)
+        {
+            transform.position = _playerData._playerPos;
+            transform.rotation = _playerData._playerRot;
+        }
     }
 
     // Update is called once per frame

@@ -154,6 +154,7 @@ MonoBehaviour:
   _runCoeffficient: 2
   _runB: 0
   _playerRB: {fileID: 4034417866546617811}
+  _playerData: {fileID: 11400000, guid: 5992622317acc3b4ba39697bfed27d19, type: 2}
 --- !u!54 &4034417866546617811
 Rigidbody:
   m_ObjectHideFlags: 0

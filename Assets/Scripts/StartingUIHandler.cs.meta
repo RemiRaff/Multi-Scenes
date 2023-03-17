@@ -3,7 +3,11 @@ guid: b24d6ebc10df07c4ba3eb61af132efaa
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _startMenu: {instanceID: 0}
+  - _scenesMenu: {fileID: 861745363855427542, guid: 039c9004c7dfd21478fe216ab0ad4ef6, type: 3}
+  - _sceneLoader: {fileID: 8772701034423774759, guid: 6584489194c8435448d131dbb623447a, type: 3}
+  - _pData: {fileID: 11400000, guid: 5992622317acc3b4ba39697bfed27d19, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

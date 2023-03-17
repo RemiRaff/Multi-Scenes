@@ -9,4 +9,5 @@ public class Data
     public float _transRotY;
     public float _transPosZ;
     public float _transRotZ;
+    public float _transRotW;
 }

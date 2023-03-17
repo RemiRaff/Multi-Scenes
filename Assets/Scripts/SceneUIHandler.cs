@@ -5,13 +5,8 @@ public class SceneUIHandler : MonoBehaviour
 {
     [SerializeField] SceneLoader _sceneLoader; // prefab
 
-    private float transfPosX;
-    private float transfPosY;
-    private float transfPosZ;
-
-    private float transfRotX;
-    private float transfRotY;
-    private float transfRotZ;
+    private Vector3 transfPos;
+    private Quaternion transfRot;
 
     public void FFButton()
     {
@@ -28,15 +23,10 @@ public class SceneUIHandler : MonoBehaviour
         _sceneLoader.LoadNextScene(3);
     }
 
-    public void SetPlayerTrans(float px, float rx, float py, float ry, float pz, float rz)
+    public void SetPlayerTrans(Vector3 plPos, Quaternion plRot)
     {
-        transfPosX = px;
-        transfPosY = py;
-        transfPosZ = pz;
-
-        transfRotX = rx;
-        transfRotY = ry;
-        transfRotZ = rz;
+        transfPos = plPos;
+        transfRot = plRot;
     }
 
     public void Exit()
@@ -51,12 +41,13 @@ public class SceneUIHandler : MonoBehaviour
             // Sauvegarder la position du joueur
             Data p = new Data();
             p._sceneID = sceneID;
-            p._transPosX = transfPosX;
-            p._transPosY = transfPosY;
-            p._transPosZ = transfPosZ;
-            p._transRotX = transfRotX;
-            p._transRotY = transfRotY;
-            p._transRotZ = transfRotZ;
+            p._transPosX = transfPos.x;
+            p._transPosY = transfPos.y;
+            p._transPosZ = transfPos.z;
+            p._transRotX = transfRot.x;
+            p._transRotY = transfRot.y;
+            p._transRotZ = transfRot.z;
+            p._transRotW = transfRot.w;
 
             // Ecrire le json
             string jsonFile = JsonUtility.ToJson(p);

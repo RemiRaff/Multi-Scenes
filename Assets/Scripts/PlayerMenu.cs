@@ -30,10 +30,7 @@ public class PlayerMenu : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
                 isDisplayed = true; // affiche le menu
                 monMenu.SetActive(true);
-                monMenu.GetComponent<SceneUIHandler>().SetPlayerTrans(
-                    transform.position.x, transform.rotation.x,
-                    transform.position.y, transform.rotation.y,
-                    transform.position.z, transform.rotation.z);
+                monMenu.GetComponent<SceneUIHandler>().SetPlayerTrans(transform.position, transform.rotation);
             }
         }
     }

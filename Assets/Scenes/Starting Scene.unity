@@ -1092,6 +1092,7 @@ MonoBehaviour:
   _startMenu: {fileID: 1283183518}
   _scenesMenu: {fileID: 861745363855427542, guid: 039c9004c7dfd21478fe216ab0ad4ef6, type: 3}
   _sceneLoader: {fileID: 1666202497}
+  _pData: {fileID: 11400000, guid: 5992622317acc3b4ba39697bfed27d19, type: 2}
 --- !u!4 &1283183520
 Transform:
   m_ObjectHideFlags: 0
