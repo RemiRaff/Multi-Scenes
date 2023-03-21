@@ -9,9 +9,10 @@ public class StartingUIHandler : MonoBehaviour
 {
     [SerializeField] GameObject _startMenu; // menu present dans la start scene
     [SerializeField] GameObject _scenesMenu; // prefab
-    [SerializeField] SceneLoader _sceneLoader; // prefab
 
     [SerializeField] PlayerData _pData;
+
+    SceneLoader _sceneLoader; // prefab
 
     private GameObject monMenu;
 
@@ -20,6 +21,9 @@ public class StartingUIHandler : MonoBehaviour
         // instantiation du prefab
         monMenu = Instantiate(_scenesMenu);
         monMenu.SetActive(false);
+
+        // on récupère le SceneManager
+        _sceneLoader = GameObject.Find("SceneManager").GetComponent<SceneLoader>();
     }
 
     public static void Exit()
@@ -40,6 +44,7 @@ public class StartingUIHandler : MonoBehaviour
 
     public void Load()
     {
+        // le player existe, on charge ses infos
         if (File.Exists(Application.persistentDataPath + "/SManData.json"))
         {
             string jsonStr = File.ReadAllText(Application.persistentDataPath + "/SManData.json");
@@ -55,5 +60,7 @@ public class StartingUIHandler : MonoBehaviour
 
             // initialiser le player
         }
+        else // sinon on charge une scène par défaut
+            _sceneLoader.LoadNextScene(1);
     }
 }

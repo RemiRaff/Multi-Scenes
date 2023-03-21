@@ -3,10 +3,16 @@ using UnityEngine.SceneManagement;
 
 public class SceneUIHandler : MonoBehaviour
 {
-    [SerializeField] SceneLoader _sceneLoader; // prefab
+    private SceneLoader _sceneLoader;
 
     private Vector3 transfPos;
     private Quaternion transfRot;
+
+    private void Start()
+    {
+        // on récupère le SceneManager
+        _sceneLoader = GameObject.Find("SceneManager").GetComponent<SceneLoader>();
+    }
 
     public void FFButton()
     {

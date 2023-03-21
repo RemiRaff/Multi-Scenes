@@ -23,6 +23,7 @@ public class PlayerMove : MonoBehaviour
         {
             transform.position = _playerData._playerPos;
             transform.rotation = _playerData._playerRot;
+            _playerData._toUpdate = false;
         }
     }
 
