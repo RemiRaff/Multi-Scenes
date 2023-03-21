@@ -328,3 +328,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuScene: {fileID: 861745363855427542, guid: 039c9004c7dfd21478fe216ab0ad4ef6, type: 3}
+  _playerLook: {fileID: 4034417866546617822}

@@ -9,7 +9,7 @@ public class Data
     public float _transPosY;
     public float _transPosZ;
 
-    // Player Transform Roration
+    // Player Transform Rotation
     public float _transRotX;
     public float _transRotY;
     public float _transRotZ;
