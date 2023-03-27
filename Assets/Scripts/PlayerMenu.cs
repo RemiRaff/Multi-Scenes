@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerMenu : MonoBehaviour
 {
-    [SerializeField] GameObject menuScene;
+    [SerializeField] GameObject menuScene; // prefab
     [SerializeField] PlayerLook _playerLook;
 
     private bool isDisplayed;

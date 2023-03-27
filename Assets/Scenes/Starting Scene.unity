@@ -1129,6 +1129,7 @@ GameObject:
   - component: {fileID: 1110418620}
   - component: {fileID: 1110418619}
   - component: {fileID: 1110418618}
+  - component: {fileID: 1110418621}
   m_Layer: 0
   m_Name: BackgroundAudio
   m_TagString: Untagged
@@ -1259,6 +1260,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1110418621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110418617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ca8b1d549f0aa24286d0b3ce8b47586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 8e2c6f89830fbbe4eb0e1373ac95d65c, type: 3}
+  - {fileID: 8300000, guid: 27767e63d38665d42ad2d135d023eac0, type: 3}
+  - {fileID: 8300000, guid: 4dba5572644d93f4fb9137a2118c4512, type: 3}
+  - {fileID: 8300000, guid: 3dd88673af7859a47b9c47ee185f13cd, type: 3}
 --- !u!1 &1283183518
 GameObject:
   m_ObjectHideFlags: 0
