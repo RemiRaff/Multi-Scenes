@@ -1277,7 +1277,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 27767e63d38665d42ad2d135d023eac0, type: 3}
   - {fileID: 8300000, guid: 4dba5572644d93f4fb9137a2118c4512, type: 3}
   - {fileID: 8300000, guid: 3dd88673af7859a47b9c47ee185f13cd, type: 3}
-  mixer: {fileID: 24100000, guid: ebd315473311e6d47b4674c06ed59fd0, type: 2}
 --- !u!1 &1283183518
 GameObject:
   m_ObjectHideFlags: 0
@@ -1338,7 +1337,7 @@ GameObject:
   - component: {fileID: 1410253762}
   - component: {fileID: 1410253761}
   m_Layer: 0
-  m_Name: Image
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1361,8 +1360,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.5700684, y: -10.703918}
-  m_SizeDelta: {x: 512.6689, y: 192.3383}
+  m_AnchoredPosition: {x: 0, y: 59.063465}
+  m_SizeDelta: {x: 0, y: 331.87308}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1410253761
 MonoBehaviour:
