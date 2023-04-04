@@ -15,6 +15,10 @@ public class AudioChange : MonoBehaviour
     void Start()
     {
         myAudioSource = GetComponent<AudioSource>();
+
+        // load & set pref value for volume
+        float volume = PlayerPrefs.GetFloat("Volume", 1);
+        myAudioSource.volume = volume;
     }
 
     // Update is called once per frame
